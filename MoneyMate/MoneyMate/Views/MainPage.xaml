@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MoneyMate.Views.MainPage">
+
+    <StackLayout>
+        <ListView ItemsSource="{Binding Transactions}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Description}" Detail="{Binding Amount, StringFormat='Amount: {0:C}'}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Add Transaction" Clicked="OnNavigateToAddTransactionPage" HorizontalOptions="FillAndExpand" Margin="10"/>
+    </StackLayout>
+
+</ContentPage>
